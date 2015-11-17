@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="app">
+	<head>
+		<title>Sistema de Gestão de Leilões -|- Prova AZ</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="vendor/kendoui/src/styles/web/kendo.common.css">
+		<link rel="stylesheet" type="text/css" href="vendor/kendoui/src/styles/web/kendo.bootstrap.css">
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="container">
+				<div class="page-header">
+					<h1>Sistema de Gestão de Leilões</h1>
+				</div>
+				<section id="menu-principal">
+					<!-- O menu deverá ser colocado aqui. -->
+					<ul class="nav nav-tabs">
+						<li ng-class="{active: activetab == '/'}">
+							 <a href="#/" id="page-unidades">Início</a>
+						</li>
+						<li ng-class="{active: activetab == '/unidades'}">
+							 <a href="#/unidades" id="page-unidades">Unidades</a>
+						</li>
+						<li ng-class="{active: activetab == '/empresas'}">
+							 <a href="#/empresas" id="page-empresas">Empresas</a>
+						</li>
+						<li ng-class="{active: activetab == '/leiloes'}">
+							 <a href="#/leiloes" id="page-leiloes">Leilões</a>
+						</li>
+					</ul>
+				</section>
+				<br></br>
+				<section id="root" ng-view>
+					
+				</section>
+			</div>
+			<div id="footer">
+				<div class="container">
+					<p class="muted credit text-center">Sistema de Gestão de Leilões</p>
+				</div>
+			</div>
+		</div>   
+
+		<script src="vendor/jquery/jquery.min.js"></script>
+		<script src="vendor/angular/angular.min.js"></script>
+		<script src="vendor/angular-route/angular-route.min.js"></script>
+		<script src="vendor/kendoui/js/kendo.all.min.js"></script>
+		
+		<script src="main.js"></script>
+		<script src="app/controllers/controllersTemplate.js"></script>
+		<script src="app/controllers/unidade/unidades.js"></script>
+		<script src="app/controllers/empresa/empresas.js"></script>
+		<script src="app/controllers/leilao/leiloes.js"></script>
+		
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+		
+		<script>
+			$("#menu").kendoMenu({
+				animation: { close: { effects: "slideIn:up" } }
+			});
+		</script>
+	</body>
+</html>

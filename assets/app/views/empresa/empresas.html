@@ -1,0 +1,145 @@
+				<!-- Mensagens -->
+				<div id="mensagem">
+					
+				</div>
+				
+				<!-- Trigger the modal with a button -->
+				<button type="button" class="btn btn-info btn-lg" data-toggle="modal" onclick="document.getElementById('form-empresa').reset();" data-target="#myModal">Cadastrar Empresa</button>
+				
+				<br><br>
+				
+				<div class="panel panel-default">
+					<div class="panel-heading">Empresas</div>
+					<div class="panel-body">
+						<div ng-app="app" ng-controller="empresaGridController">
+							<div kendo-grid k-options="gridOptions" id="kendoGrid"></div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Modal -->
+				<div id="myModal" class="modal fade" role="dialog" ng-controller="addEmpresaController">
+					<div class="modal-dialog" style="width:700px;">
+						<!-- Modal content-->
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h4 class="modal-title">Empresa</h4>
+							</div>
+							<div class="modal-body" >
+								<form class="form-horizontal" id="form-empresa" ng-submit="salvarEmpresa()">
+									<fieldset>
+										<!-- Form Name -->
+										<legend>Cadastro/Edição de Empresa</legend>
+										<input type="text" id="id" name="id" ng-model="empresa.id" style="display:none;"/>
+										<!-- Text input-->
+										<div class="form-group">
+											<label class="col-md-4 control-label" for="razaoSocial">Razão Social</label>  
+											<div class="col-md-6">
+												<input id="razaoSocial" name="razaoSocial" ng-model="empresa.razaoSocial" placeholder="Razão Social..." class="form-control input-md" type="text" required="" data-required-msg="Campo obrigatório" data-maxhtmllength="64" data-maxhtmllength-msg="O número máximo permitido de caracteres é 64">
+											</div>
+										</div>
+										<!-- Text input-->
+										<div class="form-group">
+											<label class="col-md-4 control-label" for="cnpj">CNPJ</label>  
+											<div class="col-md-4">
+												<input id="cnpj" name="cnpj" placeholder="CNPJ..." ng-model="empresa.cnpj" class="form-control input-md" required="" type="text" data-required-msg="Campo obrigatório" data-maxhtmllength="32" data-maxhtmllength-msg="O número máximo permitido de caracteres é 32">
+											</div>
+										</div>
+										<!-- Text input-->
+										<div class="form-group">
+											<label class="col-md-4 control-label" for="logradouro">Logradouro</label>  
+											<div class="col-md-6">
+												<input id="logradouro" name="logradouro" ng-model="empresa.logradouro" placeholder="Logradouro..." class="form-control input-md" type="text" data-maxhtmllength="64" data-maxhtmllength-msg="O número máximo permitido de caracteres é 64">
+											</div>
+										</div>
+										<!-- Text input-->
+										<div class="form-group">
+											<label class="col-md-4 control-label" for="municipio">Município</label>  
+											<div class="col-md-5">
+												<input id="municipio" name="municipio" ng-model="empresa.municipio" placeholder="Município" class="form-control input-md" type="text" data-maxhtmllength="64" data-maxhtmllength-msg="O número máximo permitido de caracteres é 64">
+											</div>
+										</div>
+										<!-- Text input-->
+										<div class="form-group">
+											<label class="col-md-4 control-label" for="numero">Número</label>  
+											<div class="col-md-2">
+												<input id="numero" name="numero" ng-model="empresa.numero" placeholder="Número" class="form-control input-md" type="text" data-maxhtmllength="10" data-maxhtmllength-msg="O número máximo permitido de caracteres é 10">
+											</div>
+										</div>
+										<!-- Text input-->
+										<div class="form-group">
+											<label class="col-md-4 control-label" for="complemento">Complemento</label>  
+											<div class="col-md-4">
+												<input id="complemento" name="complemento" ng-model="empresa.complemento" placeholder="Complemento..." class="form-control input-md" type="text" data-maxhtmllength="64" data-maxhtmllength-msg="O número máximo permitido de caracteres é 64">
+											</div>
+										</div>
+										<!-- Text input-->
+										<div class="form-group">
+											<label class="col-md-4 control-label" for="bairro">Bairro</label>  
+											<div class="col-md-5">
+												<input id="bairro" name="bairro" ng-model="empresa.bairro" placeholder="Bairro..." class="form-control input-md" type="text" data-maxhtmllength="64" data-maxhtmllength-msg="O número máximo permitido de caracteres é 64">
+											</div>
+										</div>
+										<!-- Text input-->
+										<div class="form-group">
+											<label class="col-md-4 control-label" for="cep">CEP</label>  
+											<div class="col-md-4">
+												<input id="cep" name="cep" ng-model="empresa.cep" placeholder="CEP..." class="form-control input-md" type="text" data-maxhtmllength="16" data-maxhtmllength-msg="O número máximo permitido de caracteres é 16">
+											</div>
+										</div>
+										<!-- Text input-->
+										<div class="form-group">
+											<label class="col-md-4 control-label" for="telefone">Telefone</label>  
+											<div class="col-md-4">
+												<input id="telefone" name="telefone" ng-model="empresa.telefone" placeholder="Telefone" class="form-control input-md" type="text" data-maxhtmllength="32" data-maxhtmllength-msg="O número máximo permitido de caracteres é 32">
+											</div>
+										</div>
+										<!-- Text input-->
+										<div class="form-group">
+											<label class="col-md-4 control-label" for="email">E-mail</label>  
+											<div class="col-md-5">
+												<input id="email" name="email" ng-model="empresa.email" placeholder="E-mail..." class="form-control input-md" required="" type="email" data-email-msg="Informe um E-mail válido. Ex: email@site.com" data-maxhtmllength="254" data-maxhtmllength-msg="O número máximo permitido de caracteres é 254">
+											</div>
+										</div>
+										<!-- Text input-->
+										<div class="form-group">
+											<label class="col-md-4 control-label" for="site">Site</label>  
+											<div class="col-md-5">
+												<input id="site" name="site" ng-model="empresa.site" placeholder="Site..." class="form-control input-md" type="text" data-maxhtmllength="254" data-maxhtmllength-msg="O número máximo permitido de caracteres é 254">
+											</div>
+										</div>
+										<!-- Text input-->
+										<div class="form-group">
+											<label class="col-md-4 control-label" for="usuario">Usuário</label>  
+											<div class="col-md-4">
+												<input id="usuario" name="usuario" ng-model="empresa.usuario" placeholder="Usuário..." class="form-control input-md" required="" type="text" data-maxhtmllength="20" data-maxhtmllength-msg="O número máximo permitido de caracteres é 20">
+											</div>
+										</div>
+										<!-- Password input-->
+										<div class="form-group">
+											<label class="col-md-4 control-label" for="senha">Senha</label>
+											<div class="col-md-4">
+												<input id="senha" name="senha" ng-model="empresa.senha" placeholder="Senha..." class="form-control input-md" required="" type="password" data-maxhtmllength="128" data-maxhtmllength-msg="O número máximo permitido de caracteres é 128">
+											</div>
+										</div>
+										<!-- Espaço em Branco -->
+										<div class="form-group">
+										</div>
+										<!-- Button (Double) -->
+										<div class="form-group">
+											<label class="col-md-4 control-label" for="botaosalvar"></label>
+											<div class="col-md-8">
+												<button id="botaosalvar" name="botaosalvar" class="btn btn-success">Cadastrar/Atualizar</button>
+												<button id="botaocancelar" name="botaocancelar" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+											</div>
+										</div>
+									</fieldset>
+								</form>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+							</div>
+						</div>
+					</div>
+				</div>
