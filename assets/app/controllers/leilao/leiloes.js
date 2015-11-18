@@ -1,6 +1,6 @@
 ﻿angular.module('app').controller('leilaoListViewController', function($scope, $http) {
     var dataSource = new kendo.data.DataSource({
-        pageSize: 5,
+        pageSize: 6,
 		transport: {
             read: function (e) {
                 $http.get('http://localhost:3000/leiloes').
