@@ -14,7 +14,7 @@
 					return false;
 				})
 				.error(function(data) {
-					alertaErro('Operação de Cadastro não foi efetuada. Erro: '.data.error);
+					alert('Operação de Cadastro não foi efetuada. Erro: '+data.error);
 					console.log(data);
 				});
 		}else{
@@ -31,7 +31,7 @@
 					return false;
 				})
 				.error(function(data) {
-					alert('Operação de Atualização não foi efetuada. Erro: '.data.error);
+					alert('Operação de Atualização não foi efetuada. Erro: '+data.error);
 					console.log(data);
 				});
 		}		
