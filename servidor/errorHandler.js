@@ -12,7 +12,7 @@
 	============================================================
 */
 var statusHTTP = require('./handlers/errors/errors-http/http-status'); // Idioma Padrão: PT BR
-var statusPostgreSQL = require('./handlers/errors/errors-postgresql/postgresql-status'); // Idioma Padrão: EN US
+//var statusPostgreSQL = require('./handlers/errors/errors-postgresql/postgresql-status'); // Idioma Padrão: EN US
 
 /*
 	========================================================== 
@@ -38,14 +38,14 @@ var errosPostgreSQL_pt_BR = {
 };
 
 //Mesclar a Tradução dos Erros do PostgreSQL
-statusPostgreSQL = Object.assign(statusPostgreSQL, errosPostgreSQL_pt_BR);
+//statusPostgreSQL = Object.assign(statusPostgreSQL, errosPostgreSQL_pt_BR);
 
 // Criando Array com Associação dos Erros do PostgreSQL e códigos de Erros de HTTP (por padrão usar o código genérico 500 e mandar a mensagem do erro do PostgreSQL para a view)
 var errosCustomizadosPostgreSQL = {
-	'23502': {code: 500, error: statusPostgreSQL['23502']},
-	'23503': {code: 500, error: statusPostgreSQL['23503']},
-	'23505': {code: 500, error: statusPostgreSQL['23505']},
-	'default': {code: 500, error: statusPostgreSQL['default']}, // Erro Geral caso estoure outra exception não listada nos códigos acima
+	'23502': {code: 500, error: errosPostgreSQL_pt_BR['23502']},
+	'23503': {code: 500, error: errosPostgreSQL_pt_BR['23503']},
+	'23505': {code: 500, error: errosPostgreSQL_pt_BR['23505']},
+	'default': {code: 500, error: errosPostgreSQL_pt_BR['default']}, // Erro Geral caso estoure outra exception não listada nos códigos acima
 };
 
 // Criando Array com Associação dos Erros do PostgreSQL e códigos de Erros de HTTP (por padrão usar o código genérico 500 e mandar a mensagem do erro do PostgreSQL para a view)
